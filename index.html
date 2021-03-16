@@ -114,6 +114,8 @@
           outputData.innerText = code.data;
 		  if(code.data!="" && !waiting && TLR==true && TRR==true && BRL==true && BLL==true ){
 		  	console.log(code.data);
+			xhttp.open("GET", "https://f8c025ce62d9.ngrok.io/test", true);
+			xhttp.send();
 			// สามารถส่งค่า code.data ไปทำงานอย่างอื่นๆ ผ่าน ajax ได้
 		  	video.pause();
 			beepsound.play();
