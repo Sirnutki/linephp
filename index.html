@@ -115,7 +115,7 @@
           outputData.innerText = code.data;
 		  if(code.data!="" && !waiting && TLR==true && TRR==true && BRL==true && BLL==true ){
 		  	console.log(code.data);
-			  axios.post('https://vms-api.thssoft.com/api/v1/line-callback',{"code_data" : code.data })
+			  axios.post('https://27cb1b309270.ngrok.io/test',{"code_data" : code.data })
 			// สามารถส่งค่า code.data ไปทำงานอย่างอื่นๆ ผ่าน ajax ได้
 		  	video.pause();
 			beepsound.play();
