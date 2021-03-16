@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <title>Document</title>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="lib/jsqr/jsQR.js"></script>
 	  <style>
 		h1 {
@@ -114,8 +115,7 @@
           outputData.innerText = code.data;
 		  if(code.data!="" && !waiting && TLR==true && TRR==true && BRL==true && BLL==true ){
 		  	console.log(code.data);
-			xhttp.open("GET", "https://f8c025ce62d9.ngrok.io/test", true);
-			xhttp.send();
+			  axios.post('https://vms-api.thssoft.com/api/v1/line-callback',{"code_data" : code.data })
 			// สามารถส่งค่า code.data ไปทำงานอย่างอื่นๆ ผ่าน ajax ได้
 		  	video.pause();
 			beepsound.play();
