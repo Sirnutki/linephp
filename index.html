@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <title>Document</title>
+    <title>QR Scanner</title>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="lib/jsqr/jsQR.js"></script>
 	  <style>
@@ -115,7 +115,7 @@
           outputData.innerText = code.data;
 		  if(code.data!="" && !waiting && TLR==true && TRR==true && BRL==true && BLL==true ){
 		  	console.log(code.data);
-			  axios.post('https://27cb1b309270.ngrok.io/test',{"code_data" : code.data })
+			axios.post('https://vms-api.thssoft.com/api/v1/line-callback',{"code_data" : code.data })
 			// สามารถส่งค่า code.data ไปทำงานอย่างอื่นๆ ผ่าน ajax ได้
 		  	video.pause();
 			beepsound.play();
