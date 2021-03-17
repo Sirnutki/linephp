@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <title>QR Scanner</title>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
 	<script src="lib/jsqr/jsQR.js"></script>
 	  <style>
 		h1 {
@@ -114,7 +113,6 @@
           outputMessage.hidden = true;
           outputData.parentElement.hidden = false;
           outputData.innerText = code.data;
-		  var user_id = profile.userId;
 		  if(code.data!="" && !waiting && TLR==true && TRR==true && BRL==true && BLL==true ){
 		  	console.log(code.data);
 			axios.post('https://20deff7b2360.ngrok.io/test',{"code_data" : code.data })
